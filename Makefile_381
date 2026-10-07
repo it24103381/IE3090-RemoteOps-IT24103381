@@ -1,0 +1,15 @@
+CC      = gcc
+CFLAGS  = -Wall -Wextra -O2 -std=gnu11 -pthread
+
+all: agent_381 controller_381
+
+agent_381: agent_381.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+controller_381: controller_381.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+clean:
+	rm -f agent_381 controller_381
+
+.PHONY: all clean
